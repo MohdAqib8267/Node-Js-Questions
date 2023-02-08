@@ -119,8 +119,12 @@ waitingData.then((data)=>{
 # How can handle Errors in Node Js?
 >Errors in Node.js can be handled using a try-catch statement, by passing a callback function to handle errors in asynchronous functions, or by emitting an 'error' event and listening for it using an 'error' listener. 
 
-#what is Promises?
+# what is Promises?
 >Promises in Node.js are objects representing the eventual completion or failure of an asynchronous operation. They provide a way to register callbacks for success or failure and simplify the handling of asynchronous operations with a cleaner syntax. Promises have three states: pending, resolved, and rejected, and can be used with the then() and catch() Or Async await methods to handle the result or error of the asynchronous operation.
 
 # How Node Js Work
-<img flex="1" alt="Screenshot_20230120_133814" src="https://user-images.githubusercontent.com/106628860/213656491-83206106-d048-4763-8c8d-4829ee60cad8.png">
+<img width="692" alt="Screenshot_20230208_131636" src="https://user-images.githubusercontent.com/106628860/217553322-acc500bd-8d21-498c-a9b2-6e5c0e2ee8b7.png">
+<img width="648" alt="Screenshot_20230208_131708" src="https://user-images.githubusercontent.com/106628860/217554057-5464d0c6-6fce-426b-9b2c-cca002bbbfd9.png">
+<img width="679" alt="Screenshot_20230208_131600" src="https://user-images.githubusercontent.com/106628860/217554150-d571a669-b731-4d32-8a5c-79c379fabdb8.png">
+
+
