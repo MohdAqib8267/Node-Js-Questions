@@ -9,24 +9,59 @@ Can process incoming requests before they reach route handler<br/>
 Can perform operations such as authentication, logging, validation, etc.<br/>
 Middleware functions are executed in the order in which they are added to the request pipeline and can modify the request and response objects, or end the request-response cycle.
 
-<h4>example </h4>
-```const express = require('express');
+>Application level middleware- its Applied All Routes
+```
+const express = require('express');
 const app = express();
+const reqFilter = (req, resp, next) => {
+    if (!req.query.age) {
+        resp.send("Please provide your age")
+    }
+    else if (req.query.age<18) {
+        resp.send("You are under aged")
+    }
+    else {
+        next();
+    }
+}
 
-// Define a middleware function
-const logMiddleware = (req, res, next) => {
-  console.log(`Received a ${req.method} request from ${req.url}`);
-  next();
-};
+app.use(reqFilter);
 
-// Use the middleware function
-app.use(logMiddleware);
-
-// Define a route handler
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
+app.get('/', (res, resp) => {
+    resp.send('Welcome to Home page')
 });
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
-});```
+app.get('/users', (res, resp) => {
+    resp.send('Welcome to Users page')
+});
+app.listen(5000)
+```
+>group level or single level middleware(example of verifyToken)[Passed this jwtVerification as a parameter in routes in which we want to apply] 
+```
+function jwtVerification(req,res,next){
+    let token = req.headers['authorization']
+    if(token){
+        token = token.split(' ')[1];
+        // console.log("verification",token);
+        jwt.verify(token,process.env.jwtKey,(err,valid)=>{
+            if(err){
+                res.status(401).json({result: "please provide valid token"});
+            }else{
+                next();
+            }
+        })
+    }else{
+        res.status(404).json({result: "please add token with header"});
+    }
+    
+}
+```
+# Node Js is Single Threaded Or multi-Threaded.
+* Node Js is Single Threaded
+* Node.js uses an event loop to handle multiple events.
+* Node.js is efficient for server-side applications.
+* The event loop runs on the main JavaScript thread.
+* Node.js relies on JavaScript's single-threaded nature.
+* Node.js does not create a separate thread for each connection.
+* The event loop is responsible for handling incoming requests and delegating tasks to worker threads.
+* Node.js uses an event-driven, non-blocking I/O model.
