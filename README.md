@@ -123,7 +123,4 @@ waitingData.then((data)=>{
 >Promises in Node.js are objects representing the eventual completion or failure of an asynchronous operation. They provide a way to register callbacks for success or failure and simplify the handling of asynchronous operations with a cleaner syntax. Promises have three states: pending, resolved, and rejected, and can be used with the then() and catch() Or Async await methods to handle the result or error of the asynchronous operation.
 
 # How Node Js Work
-![This is an image](![Uploading Screenshot_20230208_131636.png…]())
-![This is an image](<img width="648" alt="Screenshot_20230208_131708" src="https://user-images.githubusercontent.com/106628860/217467738-cecb1f44-915c-49f2-930a-26bdf64b3ea3.png">
-)
-![This is an image](<img width="679" alt="Screenshot_20230208_131600" src="https://user-images.githubusercontent.com/106628860/217467889-5cd213f5-a153-45d3-b430-64788dd22821.png">)
+<img flex="1" alt="Screenshot_20230120_133814" src="https://user-images.githubusercontent.com/106628860/213656491-83206106-d048-4763-8c8d-4829ee60cad8.png">
