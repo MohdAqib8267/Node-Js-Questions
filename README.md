@@ -65,3 +65,65 @@ function jwtVerification(req,res,next){
 * Node.js does not create a separate thread for each connection.
 * The event loop is responsible for handling incoming requests and delegating tasks to worker threads.
 * Node.js uses an event-driven, non-blocking I/O model.
+
+# What is the event-driven, non-blocking I/O model in Node.js and why is it important?
+>The event-driven, non-blocking I/O model in Node.js is a design pattern that allows the server to handle multiple requests simultaneously without blocking. Instead of waiting for a long-running process to complete, its moving on to the next request, Node.js uses non-blocking I/O operations and an event loop to process multiple requests in parallel. This makes the server more efficient and able to handle a large number of simultaneous connections.
+
+# What is the difference between synchronous and asynchronous programming?
+>Synchronous programming is a blocking, sequential execution of code where the next line of code can only be executed after the previous line has completed. In asynchronous programming, multiple operations can run simultaneously and the next line of code can be executed before the previous operation has completed. This allows for more efficient use of resources and enables the program to continue executing while waiting for slow operations to complete.
+
+# Node js is Synchronous or Asyncronous
+>Node.js is asynchronous. It uses an event-driven, non-blocking I/O model that allows it to handle multiple requests simultaneously without blocking. This means that multiple operations can run in parallel and the program can continue executing while waiting for slow operations to complete, making it more efficient and scalable.
+-Example code
+```
+console.log("start executing")      
+setTimeout(()=>{
+    console.log("execution runing")
+},0)
+console.log("execution complete")
+
+OUTPUT-
+start executing
+execution complete
+execction running
+```
+- Drawback of Asynchonous
+```
+let a=10;
+let b=0;
+setTimeout(()=>{
+    b=20
+},0)
+console.log(a+b);
+
+OUTPUT-
+10
+```
+- To handle this problem we can use Promises or callback function (but promise modern)
+```
+let a=10;
+let b=0;
+
+let waitingData=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        b=20;
+    },2000)
+})
+
+waitingData.then((data)=>{
+    b=data;
+    console.log(a+b);
+})
+```
+
+# How can handle Errors in Node Js?
+>Errors in Node.js can be handled using a try-catch statement, by passing a callback function to handle errors in asynchronous functions, or by emitting an 'error' event and listening for it using an 'error' listener. 
+
+#what is Promises?
+>Promises in Node.js are objects representing the eventual completion or failure of an asynchronous operation. They provide a way to register callbacks for success or failure and simplify the handling of asynchronous operations with a cleaner syntax. Promises have three states: pending, resolved, and rejected, and can be used with the then() and catch() Or Async await methods to handle the result or error of the asynchronous operation.
+
+# How Node Js Work
+![This is an image](![Uploading Screenshot_20230208_131636.png…]())
+![This is an image](<img width="648" alt="Screenshot_20230208_131708" src="https://user-images.githubusercontent.com/106628860/217467738-cecb1f44-915c-49f2-930a-26bdf64b3ea3.png">
+)
+![This is an image](<img width="679" alt="Screenshot_20230208_131600" src="https://user-images.githubusercontent.com/106628860/217467889-5cd213f5-a153-45d3-b430-64788dd22821.png">)
