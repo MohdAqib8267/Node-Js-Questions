@@ -127,4 +127,28 @@ waitingData.then((data)=>{
 <img width="648" alt="Screenshot_20230208_131708" src="https://user-images.githubusercontent.com/106628860/217554057-5464d0c6-6fce-426b-9b2c-cca002bbbfd9.png">
 <img width="679" alt="Screenshot_20230208_131600" src="https://user-images.githubusercontent.com/106628860/217554150-d571a669-b731-4d32-8a5c-79c379fabdb8.png">
 
+# Callback in Node Js?
+>A callback function is called after a given task. It allows other code to be run in the meantime and prevents any blocking.  Node.js is asynchronous and it's heavily relies on callback. All APIs of Node are written to support callbacks.
 
+# What are the advantages of using promises instead of callbacks?
+* The control flow of asynchronous logic is more specified and structured.
+* The coupling is low.
+* We've built-in error handling.
+* Improved readability.
+
+# How is Node.js most frequently used?
+>Real-time chats
+Internet of Things
+Complex SPAs (Single-Page Applications)
+Real-time collaboration tools
+Streaming applications
+Microservices architecture
+
+# Which database is more popularly used with Node.js?
+MongoDB is the most common database used with Node.js. It is a NoSQL, cross-platform, document-oriented database that provides high performance, high availability, and easy scalability.
+
+# What is an Event Loop in Node.js?
+Event loops handle asynchronous callbacks in Node.js. It is the foundation of the non-blocking input/output in Node.js, making it one of the most important environmental features.
+
+# What does event-driven programming mean?
+An event-driven programming approach uses events to trigger various functions. An event can be anything, such as typing a key or clicking a mouse button. A call-back function is already registered with the element executes whenever an event is triggered.
